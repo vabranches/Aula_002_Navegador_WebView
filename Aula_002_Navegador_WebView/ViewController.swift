@@ -1,24 +1,79 @@
-//
-//  ViewController.swift
-//  Aula_002_Navegador_WebView
-//
-//  Created by Swift on 17/01/17.
-//  Copyright © 2017 Swift. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate, UIWebViewDelegate {
+    
+    //MARK: OUTLETS
+    @IBOutlet weak var textFieldEndereco: UITextField!
+    @IBOutlet weak var minhaWebView: UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        //MARK: URL E REQUEST
+        let stringURL = "http://google.com.br"
+        let URLSite = Foundation.URL(string: stringURL)
+        let urlRequestSite = URLRequest(url: URLSite!)
+        minhaWebView.loadRequest(urlRequestSite)
+        
+        textFieldEndereco.text = stringURL
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //MARK: DELEGATE
+        minhaWebView.delegate = self
+        textFieldEndereco.delegate = self
     }
+    
+    //MARK: METODOS DE UIRESPONDER
+    
+    //MARK: ACTIONS
+    @IBAction func voltarPagina(_ sender: UIButton) {
+        if minhaWebView.canGoBack{
+            minhaWebView.goBack()
+        }
+    }
+    
+    @IBAction func avancarPagina(_ sender: UIButton) {
+        if minhaWebView.canGoForward{
+            minhaWebView.goForward()
+        }
+    }
+    
+    @IBAction func home(_ sender: UIButton) {
+        let stringURL = "http://google.com.br"
+        let URLSite = Foundation.URL(string: stringURL)
+        let urlRequestSite = URLRequest(url: URLSite!)
+        
+        minhaWebView.loadRequest(urlRequestSite)
+    }
+    
+    //MARK: METODOS DE TEXTFIELD DELEGATE
+    override var canBecomeFirstResponder: Bool{
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.becomeFirstResponder()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textFieldEndereco.text = ""
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let URLSite = Foundation.URL(string: "http://" + textFieldEndereco.text!)
+        let urlRequestSite = URLRequest(url: URLSite!)
+        minhaWebView.loadRequest(urlRequestSite)
+        
+        textFieldEndereco.resignFirstResponder() //Perde o foco
+        return true
+    }
+    
+    //MARK: METODOS DE WEBVIEW DELEGATE
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        let urlAtual = minhaWebView.request?.mainDocumentURL?.absoluteString
+        textFieldEndereco.text = urlAtual
+    }
+    
+    
 
 
 }
