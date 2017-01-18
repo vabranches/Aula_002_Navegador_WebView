@@ -25,6 +25,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIWebViewDelegate {
     //MARK: METODOS DE UIRESPONDER
     
     //MARK: ACTIONS
+    @IBAction func pararPagina(_ sender: UIButton) {
+        minhaWebView.stopLoading()
+    }
+    
+    @IBAction func recarregarPagina(_ sender: UIButton) {
+        minhaWebView.reload()
+    }
+    
     @IBAction func voltarPagina(_ sender: UIButton) {
         if minhaWebView.canGoBack{
             minhaWebView.goBack()

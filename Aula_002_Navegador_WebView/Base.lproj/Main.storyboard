@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,44 +19,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPw-NL-whJ">
-                                <frame key="frameInset" minX="16" minY="28" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPw-NL-whJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="N78-3T-812"/>
+                                    <constraint firstAttribute="height" constant="30" id="kKz-aD-ebe"/>
+                                </constraints>
                                 <state key="normal" title="Voltar" image="setaE.png"/>
                                 <connections>
                                     <action selector="voltarPagina:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tnn-uZ-Q2m"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvK-Ha-x9G">
-                                <frame key="frameInset" minX="54" minY="28" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvK-Ha-x9G">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="ApR-6S-hD9"/>
+                                    <constraint firstAttribute="height" constant="30" id="xMn-uK-ySK"/>
+                                </constraints>
                                 <state key="normal" title="Avancar" image="setaD.png"/>
                                 <connections>
                                     <action selector="avancarPagina:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LBO-Vx-n1c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmI-Tj-QkI">
-                                <frame key="frameInset" minX="92" minY="28" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmI-Tj-QkI">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="K0L-dm-9Lx"/>
+                                    <constraint firstAttribute="height" constant="30" id="YhO-VM-jdQ"/>
+                                </constraints>
                                 <state key="normal" title="Home" image="Home.png"/>
                                 <connections>
                                     <action selector="home:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybS-oI-YcE"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite uma URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jbj-pV-rK4">
-                                <frame key="frameInset" minX="16" minY="66" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite uma URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jbj-pV-rK4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BIe-SV-bP2"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OiD-cS-8hI">
-                                <frame key="frameInset" minY="104" width="320" height="464"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiD-cS-8hI">
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-WI-9Na">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="yBe-sm-fpe"/>
+                                    <constraint firstAttribute="width" constant="30" id="zMn-lg-opg"/>
+                                </constraints>
+                                <state key="normal" title="R"/>
+                                <connections>
+                                    <action selector="home:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v80-pm-SDX"/>
+                                    <action selector="recarregarPagina:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7h-iU-CjI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by5-rP-Mvk">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YBD-7r-0e6"/>
+                                    <constraint firstAttribute="width" constant="30" id="yjd-dW-KNT"/>
+                                </constraints>
+                                <state key="normal" title="S"/>
+                                <connections>
+                                    <action selector="home:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XA0-fc-CuR"/>
+                                    <action selector="pararPagina:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rF7-5R-RO8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OiD-cS-8hI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0Cb-qV-oRy"/>
+                            <constraint firstItem="OiD-cS-8hI" firstAttribute="top" secondItem="ugf-WI-9Na" secondAttribute="bottom" constant="8" id="14q-XT-bz9"/>
+                            <constraint firstAttribute="trailing" secondItem="OiD-cS-8hI" secondAttribute="trailing" id="1Dm-f6-Ef4"/>
+                            <constraint firstItem="YvK-Ha-x9G" firstAttribute="leading" secondItem="vPw-NL-whJ" secondAttribute="trailing" constant="8" id="6tF-2G-QeM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OiD-cS-8hI" secondAttribute="bottom" id="BrO-qb-EOc"/>
+                            <constraint firstItem="ugf-WI-9Na" firstAttribute="top" secondItem="vPw-NL-whJ" secondAttribute="bottom" constant="16" id="FTd-CP-Lpr"/>
+                            <constraint firstItem="ugf-WI-9Na" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Gs2-xK-ZBh"/>
+                            <constraint firstItem="WmI-Tj-QkI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GuI-NM-2Pb"/>
+                            <constraint firstItem="YvK-Ha-x9G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HSV-k8-eYK"/>
+                            <constraint firstItem="WmI-Tj-QkI" firstAttribute="leading" secondItem="YvK-Ha-x9G" secondAttribute="trailing" constant="8" id="KLZ-Zt-cxK"/>
+                            <constraint firstItem="Jbj-pV-rK4" firstAttribute="leading" secondItem="ugf-WI-9Na" secondAttribute="trailing" constant="8" id="QKe-bJ-4a1"/>
+                            <constraint firstItem="by5-rP-Mvk" firstAttribute="top" secondItem="WmI-Tj-QkI" secondAttribute="bottom" constant="16" id="QYc-sR-yjN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="by5-rP-Mvk" secondAttribute="trailing" id="bZN-uP-r8b"/>
+                            <constraint firstItem="vPw-NL-whJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="icN-fr-tv7"/>
+                            <constraint firstItem="vPw-NL-whJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ldB-Nu-A7V"/>
+                            <constraint firstItem="Jbj-pV-rK4" firstAttribute="top" secondItem="WmI-Tj-QkI" secondAttribute="bottom" constant="16" id="mh9-Fi-yGY"/>
+                            <constraint firstItem="by5-rP-Mvk" firstAttribute="leading" secondItem="Jbj-pV-rK4" secondAttribute="trailing" constant="8" id="zJV-21-rVF"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="minhaWebView" destination="OiD-cS-8hI" id="g2V-YN-TQe"/>
@@ -64,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="94"/>
+            <point key="canvasLocation" x="197.59999999999999" y="92.203898050974516"/>
         </scene>
     </scenes>
     <resources>
